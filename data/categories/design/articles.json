@@ -1,0 +1,72 @@
+[
+  {
+    "category": "design",
+    "title": "Architectural Neo-Minimalism: Reclaiming Light and Raw Materials in Modern Metropolises",
+    "slug": "architectural-neo-minimalism-reclaiming-light-and-raw-materials",
+    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+    "date": "August. 06, 2026",
+    "shortdescription": "Contemporary urban masterplans embrace monolithic concrete, natural timber, and expansive void spaces to cultivate tranquility amidst urban density.",
+    "description": [
+      {
+        "subtitle": "Spatial Silence",
+        "text": "Leading architects are prioritizing acoustics, passive light wells, and raw basalt finishes to reduce sensory overhead in commercial towers."
+      },
+      {
+        "subtitle": "Sustainability Through Longevity",
+        "text": "Using ultra-durable untreated stone reduces lifecycle carbon footprints while allowing structures to age with character."
+      }
+    ],
+    "author": {
+      "name": "Julian Sterling",
+      "role": "Architecture Critic",
+      "bio": "Julian writes on urban design, industrial aesthetics, and spatial psychology.",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
+      "slug": "julian-sterling",
+      "email": "julian.sterling@wiremingle.com"
+    }
+  },
+  {
+    "category": "design",
+    "title": "The Renaissance of Tactile Hardware: Why Physical Knobs and Switches Are Returning",
+    "slug": "renaissance-of-tactile-hardware-physical-knobs-and-switches",
+    "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
+    "date": "August. 04, 2026",
+    "shortdescription": "Product designers move away from smooth glass touchscreens, embracing machined aluminum dials and satisfying haptic feedback.",
+    "description": [
+      {
+        "subtitle": "Haptic Intention",
+        "text": "Consumer sentiment reveals fatigue with non-tactile menus. Analog controls provide muscle-memory accuracy without visual distraction."
+      }
+    ],
+    "author": {
+      "name": "Julian Sterling",
+      "role": "Architecture Critic",
+      "bio": "Julian writes on urban design, industrial aesthetics, and spatial psychology.",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
+      "slug": "julian-sterling",
+      "email": "julian.sterling@wiremingle.com"
+    }
+  },
+  {
+    "category": "design",
+    "title": "Generative Typography Systems Revolutionize Dynamic Digital Editorial Layouts",
+    "slug": "generative-typography-systems-revolutionize-digital-editorial",
+    "image": "https://images.unsplash.com/photo-1542744094-3a31b272c490?w=800&q=80",
+    "date": "August. 01, 2026",
+    "shortdescription": "Variable fonts combined with real-time viewport fluid scaling deliver flawless typographic hierarchy on foldable display matrixes.",
+    "description": [
+      {
+        "subtitle": "Fluid Geometry",
+        "text": "Type foundries are partnering with front-end engineers to code adaptive letterforms that adjust weight based on ambient lighting."
+      }
+    ],
+    "author": {
+      "name": "Kaito Tanaka",
+      "role": "Software Architecture Editor",
+      "bio": "Kaito analyzes open-source ecosystems and web standard evolution.",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80",
+      "slug": "kaito-tanaka",
+      "email": "kaito.tanaka@wiremingle.com"
+    }
+  }
+]

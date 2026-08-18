@@ -1,0 +1,72 @@
+[
+  {
+    "category": "culture",
+    "title": "The New Era of Silent Cinema: Why Soundless Atmospheric Exhibits Are Packing Galleries Globally",
+    "slug": "new-era-of-silent-cinema-atmospheric-exhibits",
+    "image": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&q=80",
+    "date": "August. 06, 2026",
+    "shortdescription": "Experimental filmmakers and light projectionists craft hyper-vivid silent narratives that rely entirely on kinetic choreography and shadows.",
+    "description": [
+      {
+        "subtitle": "The Art of Visual Silence",
+        "text": "Audiences fatigued by non-stop auditory media streams are flocking to silent light pavilions for immersive deep-focus storytelling."
+      },
+      {
+        "subtitle": "Global Exhibition Circuit",
+        "text": "Venues in Tokyo, Berlin, and Montreal report sold-out runs for non-narrative visual symphonies."
+      }
+    ],
+    "author": {
+      "name": "Clara Vane",
+      "role": "Cultural Essayist",
+      "bio": "Clara writes on contemporary art movements, digital media consumption, and philosophy.",
+      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80",
+      "slug": "clara-vane",
+      "email": "clara.vane@wiremingle.com"
+    }
+  },
+  {
+    "category": "culture",
+    "title": "Preserving Sonic Heritage: The Underground Vault Digitizing 100,000 Rare Vinyl Master Tapes",
+    "slug": "preserving-sonic-heritage-underground-vault-digitizing-tapes",
+    "image": "https://images.unsplash.com/photo-1539375665275-f9de415ef9ac?w=800&q=80",
+    "date": "August. 03, 2026",
+    "shortdescription": "In a climate-controlled bunker beneath the Swiss Alps, audio archivists preserve lost mid-century Jazz and World recordings in ultra-high resolution.",
+    "description": [
+      {
+        "subtitle": "Acoustical Archaeology",
+        "text": "Using contact lasers that read groove depth without touching fragile analog magnetic tape, technicians restore damaged audio tracks."
+      }
+    ],
+    "author": {
+      "name": "Clara Vane",
+      "role": "Cultural Essayist",
+      "bio": "Clara writes on contemporary art movements, digital media consumption, and philosophy.",
+      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80",
+      "slug": "clara-vane",
+      "email": "clara.vane@wiremingle.com"
+    }
+  },
+  {
+    "category": "culture",
+    "title": "Hyper-Local Gastronomy and the Revival of Forgotten Ancestral Grains in High Dining",
+    "slug": "hyper-local-gastronomy-revival-of-ancestral-grains",
+    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80",
+    "date": "August. 02, 2026",
+    "shortdescription": "Michelin-starred culinary directors partner with heritage agrarian seed vaults to reintroduce drought-resistant heritage crops.",
+    "description": [
+      {
+        "subtitle": "Culinary Heritage Meets Soil Health",
+        "text": "Ancient emmer, einkorn, and teff variants return to urban tables, celebrated for deep nutty profiles and drought resilience."
+      }
+    ],
+    "author": {
+      "name": "Dr. Maya Lin",
+      "role": "Genomics & Bioethics Editor",
+      "bio": "Maya explores the intersection of gene therapy, longevity research, and medical ethics.",
+      "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&q=80",
+      "slug": "maya-lin",
+      "email": "maya.lin@wiremingle.com"
+    }
+  }
+]

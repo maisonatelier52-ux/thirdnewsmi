@@ -1,0 +1,72 @@
+[
+  {
+    "category": "technology",
+    "title": "Quantum Computing Milestone: 10,000 Logical Qubits Demonstrated in Zero-Noise Chamber",
+    "slug": "quantum-computing-milestone-10000-logical-qubits",
+    "image": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80",
+    "date": "August. 06, 2026",
+    "shortdescription": "Researchers achieve fault-tolerant fault isolation, opening doors to real-time molecular modeling and cryptography breakthroughs.",
+    "description": [
+      {
+        "subtitle": "Breakthrough in Fault Tolerance",
+        "text": "The physics team confirmed sustained quantum coherence over 45 minutes, marking an exponential jump over prior decoherence thresholds."
+      },
+      {
+        "subtitle": "Practical Applications Ahead",
+        "text": "Early access partner laboratories are already configuring room-temperature superconductor simulations."
+      }
+    ],
+    "author": {
+      "name": "Dr. Aris Thorne",
+      "role": "Chief Science Correspondent",
+      "bio": "Aris holds a doctorate in Quantum Physics and writes on deeptech breakthroughs.",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
+      "slug": "aris-thorne",
+      "email": "aris.thorne@wiremingle.com"
+    }
+  },
+  {
+    "category": "technology",
+    "title": "Autonomous Neural Interfaces Pass Clinical Human Trials with Zero Latency",
+    "slug": "autonomous-neural-interfaces-pass-clinical-trials",
+    "image": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800&q=80",
+    "date": "August. 05, 2026",
+    "shortdescription": "Next-generation non-invasive neural meshes allow fluid motor control and high-bandwidth thought-to-text input.",
+    "description": [
+      {
+        "subtitle": "Seamless Human-Machine Interface",
+        "text": "Participants demonstrated natural typing speeds exceeding 140 words per minute using micro-electrodes mounted inside lightweight headband sensors."
+      }
+    ],
+    "author": {
+      "name": "Sarah Jenkins",
+      "role": "Business Analyst",
+      "bio": "Sarah covers markets and tech business strategies.",
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80",
+      "slug": "sarah-jenkins",
+      "email": "sarah.jenkins@wiremingle.com"
+    }
+  },
+  {
+    "category": "technology",
+    "title": "Open-Source Spatial Computing OS Surpasses 50 Million Active Headset Users",
+    "slug": "open-source-spatial-computing-os-surpasses-50-million-users",
+    "image": "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=800&q=80",
+    "date": "August. 03, 2026",
+    "shortdescription": "A community-driven spatial kernel becomes the dominant operating framework for mixed reality hardware across enterprise and gaming.",
+    "description": [
+      {
+        "subtitle": "Decentralized Ecosystem",
+        "text": "Developers hail the modular graphics pipeline and zero-telemetry architecture as the foundation for the open spatial web."
+      }
+    ],
+    "author": {
+      "name": "Kaito Tanaka",
+      "role": "Software Architecture Editor",
+      "bio": "Kaito analyzes open-source ecosystems and web standard evolution.",
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80",
+      "slug": "kaito-tanaka",
+      "email": "kaito.tanaka@wiremingle.com"
+    }
+  }
+]

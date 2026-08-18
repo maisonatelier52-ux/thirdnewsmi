@@ -1,0 +1,72 @@
+[
+  {
+    "category": "science",
+    "title": "James Webb Successor Telescope Captures Direct Atmospheric Composition of Exoplanet K2-18b",
+    "slug": "james-webb-successor-captures-atmospheric-composition-k2-18b",
+    "image": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&q=80",
+    "date": "August. 06, 2026",
+    "shortdescription": "Spectral signatures confirm significant water vapor, dimethyl sulfide, and methane clouds in the temperate sub-Neptune zone.",
+    "description": [
+      {
+        "subtitle": "Signatures of a Hycean World",
+        "text": "Astronomers confirm ocean coverage estimates exceeding 85% of the planet's surface under a hydrogen-rich atmosphere."
+      },
+      {
+        "subtitle": "Spectroscopic Precision",
+        "text": "The high-resolution infrared coronagraph isolated light reflection without interference from the host red dwarf star."
+      }
+    ],
+    "author": {
+      "name": "Dr. Aris Thorne",
+      "role": "Chief Science Correspondent",
+      "bio": "Aris holds a doctorate in Quantum Physics and writes on deeptech breakthroughs.",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
+      "slug": "aris-thorne",
+      "email": "aris.thorne@wiremingle.com"
+    }
+  },
+  {
+    "category": "science",
+    "title": "Deep Ocean Microbial Enzymes Capable of Breaking Down Polyethylene in 48 Hours",
+    "slug": "deep-ocean-microbial-enzymes-break-down-polyethylene",
+    "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
+    "date": "August. 04, 2026",
+    "shortdescription": "Biologists isolate hyper-extremophile bacterial colonies from Mariana Trench sediment that consume microplastics cleanly.",
+    "description": [
+      {
+        "subtitle": "Bioremediation Breakthrough",
+        "text": "The enzymatic pathway yields harmless organic acids and water, providing a scalable solution for industrial waste processing."
+      }
+    ],
+    "author": {
+      "name": "Dr. Aris Thorne",
+      "role": "Chief Science Correspondent",
+      "bio": "Aris holds a doctorate in Quantum Physics and writes on deeptech breakthroughs.",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80",
+      "slug": "aris-thorne",
+      "email": "aris.thorne@wiremingle.com"
+    }
+  },
+  {
+    "category": "science",
+    "title": "CRISPR 3.0 Epigenetic Rewriting Corrects Hereditary Cardiac Markers Without DNA Cut Strand Breaks",
+    "slug": "crispr-epigenetic-rewriting-corrects-hereditary-cardiac-markers",
+    "image": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&q=80",
+    "date": "August. 01, 2026",
+    "shortdescription": "Base-editing tools eliminate off-target mutations by re-methylating regulatory gene promoters rather than cleaving double helixes.",
+    "description": [
+      {
+        "subtitle": "Gene Therapy Frontier",
+        "text": "Clinical trial results show 99.4% gene silence rate in targeted liver hepatocytes with zero detectable side-effect tissue damage."
+      }
+    ],
+    "author": {
+      "name": "Dr. Maya Lin",
+      "role": "Genomics & Bioethics Editor",
+      "bio": "Maya explores the intersection of gene therapy, longevity research, and medical ethics.",
+      "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&q=80",
+      "slug": "maya-lin",
+      "email": "maya.lin@wiremingle.com"
+    }
+  }
+]

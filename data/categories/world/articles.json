@@ -1,0 +1,72 @@
+[
+  {
+    "category": "world",
+    "title": "Global Treaty Signed to Protect Trans-Oceanic Subsea Optical Fiber Networks",
+    "slug": "global-treaty-signed-to-protect-trans-oceanic-fiber-networks",
+    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
+    "date": "August. 06, 2026",
+    "shortdescription": "Delegates from 140 nations establish international maritime patrol zones and emergency repair protocols for underwater digital corridors.",
+    "description": [
+      {
+        "subtitle": "Protecting the Global Spine",
+        "text": "Over 99% of international data transfers rely on subsea links; the accord grants special diplomatic protection status to cable repair vessels."
+      },
+      {
+        "subtitle": "International Consensus",
+        "text": "The treaty mandates standardized sonar pinging frequencies to prevent fishing vessel snagging and accidental anchor drag damage."
+      }
+    ],
+    "author": {
+      "name": "Amara Diallo",
+      "role": "Diplomatic & Geopolitics Lead",
+      "bio": "Amara reports on international accords, maritime security, and global infrastructure.",
+      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80",
+      "slug": "amara-diallo",
+      "email": "amara.diallo@wiremingle.com"
+    }
+  },
+  {
+    "category": "world",
+    "title": "Nordic Clean Grid Interconnector Unites Renewable Reserves Across 7 Countries",
+    "slug": "nordic-clean-grid-interconnector-unites-renewable-reserves",
+    "image": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&q=80",
+    "date": "August. 04, 2026",
+    "shortdescription": "High-voltage direct current grid connection balances wind output in the North Sea with Scandinavian hydropower reservoirs.",
+    "description": [
+      {
+        "subtitle": "Cross-Border Energy Exchange",
+        "text": "The synchronized grid reduced regional peak wholesale electricity pricing by 28% within its first 48 hours of full activation."
+      }
+    ],
+    "author": {
+      "name": "Elena Rostova",
+      "role": "Investment Strategist",
+      "bio": "Elena focuses on venture capital flows and renewable energy finance.",
+      "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80",
+      "slug": "elena-rostova",
+      "email": "elena.rostova@wiremingle.com"
+    }
+  },
+  {
+    "category": "world",
+    "title": "Pan-Asian High-Speed Rail Corridor Opens Seamless Transit Between 5 Capitals",
+    "slug": "pan-asian-high-speed-rail-corridor-opens-seamless-transit",
+    "image": "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&q=80",
+    "date": "August. 02, 2026",
+    "shortdescription": "The 3,200 km electrified high-speed line cuts passenger travel duration by 60% and slashes regional freight emissions.",
+    "description": [
+      {
+        "subtitle": "Economic Integration",
+        "text": "Cities along the corridor report surge activity in cross-border trade hubs, education exchanges, and tourism."
+      }
+    ],
+    "author": {
+      "name": "Amara Diallo",
+      "role": "Diplomatic & Geopolitics Lead",
+      "bio": "Amara reports on international accords, maritime security, and global infrastructure.",
+      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80",
+      "slug": "amara-diallo",
+      "email": "amara.diallo@wiremingle.com"
+    }
+  }
+]
