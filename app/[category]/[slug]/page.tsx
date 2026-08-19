@@ -271,7 +271,7 @@ export default function ArticleDetailPage({ params }: ArticleDetailPageProps) {
                   onClick={() => router.push(`/${rel.category.toLowerCase()}/${rel.slug}`)}
                   className={`group cursor-pointer space-y-2 ${idx !== 0 ? "md:pl-6 pt-4 md:pt-0" : ""}`}
                 >
-                  <div className="relative w-full h-36 sm:h-40 rounded-none overflow-hidden bg-gray-100 border border-gray-100">
+                  <div className="relative w-full h-48 sm:h-48 md:h-36 lg:h-40 rounded-none overflow-hidden bg-gray-100 border border-gray-100">
                     <Image
                       src={rel.image}
                       alt={rel.title}

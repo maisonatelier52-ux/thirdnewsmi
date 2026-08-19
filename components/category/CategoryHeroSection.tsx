@@ -62,10 +62,7 @@ export default function CategoryHeroSection({
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
               
-              <div className="absolute bottom-5 left-5 right-5 text-white flex items-center justify-between text-xs font-mono">
-                <span className="flex items-center gap-1.5 font-bold uppercase tracking-wider bg-red-700 px-2.5 py-1 rounded-sm">
-                  LEAD REPORT
-                </span>
+              <div className="absolute bottom-5 left-5 right-5 text-white flex items-center text-xs font-mono">
                 <span className="flex items-center gap-1.5 text-gray-200">
                   <Clock className="w-3.5 h-3.5" /> 4 MIN READ • {leadArticle.date}
                 </span>
