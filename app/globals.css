@@ -5,8 +5,14 @@
   --bg-card: #ffffff;
   --bg-card-hover: #f9fafb;
   --border-subtle: #e5e7eb;
-  --accent-red: #b91c1c;
-  --accent-crimson: #991b1b;
+  --accent-red: #c8201f;
+  --accent-crimson: #a81e1e;
+}
+
+@theme {
+  --color-red-700: #c8201f;
+  --color-red-800: #a81e1e;
+  --color-red-600: #dc2626;
 }
 
 body {

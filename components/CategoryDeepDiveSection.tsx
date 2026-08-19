@@ -3,6 +3,7 @@
 import { Article } from "@/types/article";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 interface CategoryDeepDiveSectionProps {
   articles: Article[];
@@ -21,7 +22,7 @@ export default function CategoryDeepDiveSection({
 
   return (
     <section className="w-full py-5 sm:py-8 border-b border-gray-200 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-6">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-6 space-y-4 sm:space-y-6">
         
         {/* Section Header */}
         <div className="pb-2 border-b border-gray-200">
@@ -69,7 +70,11 @@ export default function CategoryDeepDiveSection({
 
               {/* Author Footer */}
               <div className="pt-3 flex items-center justify-between border-t border-gray-100">
-                <div className="flex items-center gap-3">
+                <Link
+                  href={`/author/${article.author.slug}`}
+                  onClick={(e) => e.stopPropagation()}
+                  className="flex items-center gap-3 group/auth hover:opacity-80 transition-opacity"
+                >
                   <div className="relative w-7 h-7 rounded-full overflow-hidden border border-gray-200 shrink-0">
                     <Image
                       src={article.author.image}
@@ -79,14 +84,14 @@ export default function CategoryDeepDiveSection({
                     />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-gray-900">
+                    <div className="text-xs font-bold text-gray-900 group-hover/auth:text-red-700 group-hover/auth:underline">
                       {article.author.name}
                     </div>
                     <div className="text-[10px] text-gray-500 font-mono">
                       {article.author.role}
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             </motion.div>
           ))}

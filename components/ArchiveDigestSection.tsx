@@ -5,6 +5,7 @@ import { Article } from "@/types/article";
 import { motion } from "framer-motion";
 import { Mail, CheckCircle2, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ArchiveDigestSectionProps {
   articles: Article[];
@@ -29,7 +30,7 @@ export default function ArchiveDigestSection({ articles, onOpenArticle }: Archiv
 
   return (
     <section className="w-full py-5 sm:py-8 border-b border-gray-200 bg-white text-gray-900 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-6">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-6 space-y-4 sm:space-y-6">
         
         {/* Section Header */}
         <div className="pb-2 border-b border-gray-200">
@@ -132,7 +133,13 @@ export default function ArchiveDigestSection({ articles, onOpenArticle }: Archiv
 
                 {/* Author Line Below */}
                 <div className="pt-2 border-t border-gray-100 text-[11px] text-gray-500 font-mono">
-                  By {article.author.name}
+                  <Link 
+                    href={`/author/${article.author.slug}`} 
+                    onClick={(e) => e.stopPropagation()}
+                    className="hover:underline hover:decoration-1"
+                  >
+                    By {article.author.name}
+                  </Link>
                 </div>
               </motion.div>
             ))}

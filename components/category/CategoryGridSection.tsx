@@ -4,6 +4,7 @@ import { Article } from "@/types/article";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface CategoryGridSectionProps {
   categoryName: string;
@@ -19,8 +20,8 @@ export default function CategoryGridSection({
   if (!articles || articles.length === 0) return null;
 
   return (
-    <section className="w-full py-12 md:py-16 bg-white text-gray-900 border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    <section className="w-full py-8 md:py-12 bg-white text-gray-900 border-b border-gray-200">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-6 space-y-6">
         
         {/* Section Header */}
         <div className="pb-4 border-b border-gray-100">
@@ -70,7 +71,13 @@ export default function CategoryGridSection({
 
               {/* Author Footer */}
               <div className="pt-3 flex items-center justify-between border-t border-gray-100 text-[11px] text-gray-400 font-sans">
-                <span>By {article.author.name}</span>
+                <Link
+                  href={`/author/${article.author.slug}`}
+                  onClick={(e) => e.stopPropagation()}
+                  className="hover:text-gray-900 hover:underline transition-colors"
+                >
+                  By {article.author.name}
+                </Link>
                 <ArrowUpRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-gray-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
               </div>
             </motion.div>

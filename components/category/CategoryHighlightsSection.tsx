@@ -3,6 +3,7 @@
 import { Article } from "@/types/article";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 interface CategoryHighlightsSectionProps {
   categoryName: string;
@@ -20,8 +21,8 @@ export default function CategoryHighlightsSection({
   const opinionHighlights = articles.slice(5, 9).length === 4 ? articles.slice(5, 9) : articles.slice(0, 4);
 
   return (
-    <section className="w-full py-12 md:py-16 bg-white text-gray-900 border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    <section className="w-full py-8 md:py-12 bg-white text-gray-900 border-b border-gray-200">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-6 space-y-6">
         
         {/* Section Header */}
         <div className="pb-4 border-b border-gray-100">
@@ -58,7 +59,13 @@ export default function CategoryHighlightsSection({
               </div>
 
               <div className="pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-400 font-sans">
-                <span className="font-semibold text-gray-900">By {art.author.name}</span>
+                <Link
+                  href={`/author/${art.author.slug}`}
+                  onClick={(e) => e.stopPropagation()}
+                  className="font-semibold text-gray-900 hover:text-red-700 hover:underline transition-colors"
+                >
+                  By {art.author.name}
+                </Link>
                 <ArrowUpRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-gray-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
               </div>
             </motion.div>

@@ -4,6 +4,7 @@ import { Article } from "@/types/article";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Clock } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface HeroMosaicSectionProps {
   articles: Article[];
@@ -23,13 +24,13 @@ export default function HeroMosaicSection({
 
   return (
     <section className="w-full py-8 md:py-12 bg-white text-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-6 space-y-8">
         
-        {/* MAIN SUPER-MINIMAL 12-COLUMN HERO GRID */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+        {/* Main 3-Column Editorial Mosaic Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* LEFT COLUMN: 3 Minimal Text Cards (3 Cols) */}
-          <div className="lg:col-span-3 space-y-6">
+          {/* LEFT COLUMN: 3 Compact Story Cards (3 Cols) */}
+          <div className="lg:col-span-3 space-y-5">
             {leftArticles.map((article, idx) => (
               <motion.div
                 key={article.slug}
@@ -37,13 +38,14 @@ export default function HeroMosaicSection({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
                 onClick={() => onOpenArticle(article)}
-                className="group cursor-pointer p-3 -mx-3 hover:bg-gray-50/80 transition-all duration-300 space-y-2 border-b border-gray-100 last:border-b-0 pb-4"
+                className="group cursor-pointer p-3 -mx-3 hover:bg-gray-50/80 transition-all duration-300 space-y-2 border-b border-gray-100 last:border-b-0 pb-3"
               >
-                <div className="flex items-center gap-2 text-[11px] font-sans text-gray-400">
-                  <span className="text-[10px] uppercase font-mono">{article.date}</span>
+                <div className="flex items-center justify-between text-[11px] font-sans">
+                  <span className="text-gray-400 font-mono text-[10px] uppercase font-bold tracking-wider">{article.category}</span>
+                  <span className="text-gray-400 text-[10px] font-mono">{article.date}</span>
                 </div>
 
-                <h3 className="font-serif font-bold text-base sm:text-lg text-gray-900 group-hover:underline leading-snug transition-colors">
+                <h3 className="font-serif font-bold text-base text-gray-900 group-hover:underline leading-snug line-clamp-2 transition-colors">
                   {article.title}
                 </h3>
 
@@ -52,7 +54,13 @@ export default function HeroMosaicSection({
                 </p>
 
                 <div className="pt-1 flex items-center justify-between text-[11px] text-gray-400 font-sans">
-                  <span>By {article.author.name}</span>
+                  <Link
+                    href={`/author/${article.author.slug}`}
+                    onClick={(e) => e.stopPropagation()}
+                    className="hover:text-red-700 hover:underline transition-colors font-medium"
+                  >
+                    By {article.author.name}
+                  </Link>
                   <ArrowUpRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-gray-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                 </div>
               </motion.div>
@@ -95,7 +103,13 @@ export default function HeroMosaicSection({
               </p>
 
               <div className="pt-2 flex items-center justify-between text-xs text-gray-500 font-sans border-t border-gray-100">
-                <span className="font-medium text-gray-900">By {leadArticle.author.name}</span>
+                <Link
+                  href={`/author/${leadArticle.author.slug}`}
+                  onClick={(e) => e.stopPropagation()}
+                  className="font-medium text-gray-900 hover:text-red-700 hover:underline transition-colors"
+                >
+                  By {leadArticle.author.name}
+                </Link>
                 <span className="flex items-center gap-1 font-semibold text-gray-900 group-hover:underline transition-colors">
                   Read Article <ArrowUpRight className="w-3.5 h-3.5" />
                 </span>
@@ -125,7 +139,13 @@ export default function HeroMosaicSection({
                 </h3>
 
                 <div className="pt-1 flex items-center justify-between text-[11px] text-gray-400 font-sans">
-                  <span>By {article.author.name}</span>
+                  <Link
+                    href={`/author/${article.author.slug}`}
+                    onClick={(e) => e.stopPropagation()}
+                    className="hover:text-red-700 hover:underline transition-colors font-medium"
+                  >
+                    By {article.author.name}
+                  </Link>
                   <ArrowUpRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-gray-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                 </div>
               </motion.div>

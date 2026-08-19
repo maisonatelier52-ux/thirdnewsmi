@@ -2,8 +2,9 @@
 
 import { Article } from "@/types/article";
 import { AnimatePresence, motion } from "framer-motion";
-import { X, Clock, Calendar, Mail, User, Share2, Bookmark, ArrowRight, Volume2, Sparkles } from "lucide-react";
+import { X, Clock, Calendar, Mail, User, Share2, Bookmark, ArrowRight, Volume2, Sparkles, ExternalLink } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 interface ArticleModalProps {
@@ -131,8 +132,12 @@ export default function ArticleModal({ article, onClose, onSelectArticle, allArt
 
             {/* Author Card Banner */}
             <div className="flex items-center justify-between p-4 rounded-xl bg-gray-50 border border-gray-200 shadow-2xs">
-              <div className="flex items-center gap-4">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden border border-red-700/40 shrink-0">
+              <Link
+                href={`/author/${article.author.slug}`}
+                onClick={onClose}
+                className="group flex items-center gap-4 hover:opacity-90 transition-all"
+              >
+                <div className="relative w-12 h-12 rounded-full overflow-hidden border border-gray-200 shrink-0 transition-all">
                   <Image
                     src={article.author.image}
                     alt={article.author.name}
@@ -141,21 +146,30 @@ export default function ArticleModal({ article, onClose, onSelectArticle, allArt
                   />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-gray-900 flex items-center gap-2">
+                  <h4 className="text-sm font-bold text-gray-900 group-hover:text-red-700 group-hover:underline group-hover:decoration-1 flex items-center gap-2 transition-colors">
                     {article.author.name}
-                    <span className="px-2 py-0.5 text-[10px] font-mono bg-gray-200 text-gray-800 rounded font-semibold">
+                    <span className="px-2 py-0.5 text-[10px] font-mono bg-gray-200 text-gray-800 rounded font-semibold group-hover:bg-red-50 group-hover:text-red-700">
                       {article.author.role}
                     </span>
                   </h4>
                   <p className="text-xs text-gray-600 line-clamp-1 mt-0.5">{article.author.bio}</p>
                 </div>
+              </Link>
+              <div className="flex items-center gap-2">
+                <Link
+                  href={`/author/${article.author.slug}`}
+                  onClick={onClose}
+                  className="hidden sm:flex items-center gap-1.5 text-xs text-gray-700 hover:text-red-700 hover:underline hover:decoration-1 font-mono font-bold border border-gray-300 px-3 py-1.5 rounded-lg bg-white hover:bg-gray-100 transition-colors"
+                >
+                  View Profile <ExternalLink className="w-3.5 h-3.5 text-gray-500" />
+                </Link>
+                <a
+                  href={`mailto:${article.author.email}`}
+                  className="hidden sm:flex items-center gap-1.5 text-xs text-red-700 hover:text-red-800 hover:underline hover:decoration-1 font-mono font-bold border border-red-200 px-3 py-1.5 rounded-lg bg-red-50 hover:bg-red-100 transition-colors"
+                >
+                  <Mail className="w-3.5 h-3.5 text-red-700" /> Contact
+                </a>
               </div>
-              <a
-                href={`mailto:${article.author.email}`}
-                className="hidden sm:flex items-center gap-1.5 text-xs text-red-700 hover:text-red-800 font-mono font-bold border border-red-200 px-3 py-1.5 rounded-lg bg-red-50 hover:bg-red-100 transition-colors"
-              >
-                <Mail className="w-3.5 h-3.5 text-red-700" /> Contact
-              </a>
             </div>
 
             {/* Main Featured Image */}
@@ -214,7 +228,7 @@ export default function ArticleModal({ article, onClose, onSelectArticle, allArt
                         <Image src={rel.image} alt={rel.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h5 className="text-xs font-bold text-gray-900 group-hover:text-red-700 line-clamp-2 transition-colors">
+                        <h5 className="text-xs font-bold text-gray-900 group-hover:text-red-700 group-hover:underline group-hover:decoration-1 line-clamp-2 transition-colors">
                           {rel.title}
                         </h5>
                         <p className="text-[11px] text-gray-500 font-mono mt-1">{rel.date}</p>
@@ -231,7 +245,7 @@ export default function ArticleModal({ article, onClose, onSelectArticle, allArt
             <span>DOMAIN NAME // ARTICLE READER</span>
             <button
               onClick={onClose}
-              className="flex items-center gap-1 font-mono text-red-700 hover:text-red-800 font-bold transition-colors"
+              className="flex items-center gap-1 font-mono text-red-700 hover:text-red-800 hover:underline hover:decoration-1 font-bold transition-colors"
             >
               Return to Homepage <ArrowRight className="w-3.5 h-3.5" />
             </button>

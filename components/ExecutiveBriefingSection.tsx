@@ -4,6 +4,7 @@ import { Article } from "@/types/article";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ExecutiveBriefingSectionProps {
   articles: Article[];
@@ -18,20 +19,23 @@ export default function ExecutiveBriefingSection({ articles, onOpenArticle }: Ex
   const col3Article = articles[4] || articles[0];
 
   return (
-    <section className="w-full py-5 sm:py-8 border-b border-gray-200 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-6">
+    <section className="w-full py-8 md:py-12 bg-white text-gray-900 border-t border-gray-100">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-6 space-y-6">
         
-        {/* Section Title Header */}
-        <div className="pb-2 border-b border-gray-200">
-          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-gray-900 tracking-tight">
-            Executive Briefing Room
+        {/* Section Header */}
+        <div className="flex items-center justify-between border-b border-gray-900 pb-2">
+          <h2 className="text-xl md:text-2xl font-serif font-bold text-gray-900 tracking-tight flex items-center gap-2">
+            Executive Briefing & Intelligence
           </h2>
+          <span className="text-xs font-mono text-gray-400 font-bold uppercase tracking-wider">
+            ANALYSIS MATRIX
+          </span>
         </div>
 
-        {/* Asymmetric 3-Column Magazine Deck with Tighter Gap Spacing */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-start">
+        {/* 3-Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* COLUMN 1: Image Top + Detailed Feature Briefing (4 Cols) */}
+          {/* COLUMN 1: Large Image Top + Text Details (4 Cols) */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -66,7 +70,11 @@ export default function ExecutiveBriefingSection({ articles, onOpenArticle }: Ex
             </div>
 
             <div className="pt-2 flex items-center justify-between border-t border-gray-100">
-              <div className="flex items-center gap-2.5">
+              <Link
+                href={`/author/${col1Article.author.slug}`}
+                onClick={(e) => e.stopPropagation()}
+                className="flex items-center gap-2.5 group/auth hover:opacity-80 transition-opacity"
+              >
                 <div className="relative w-7 h-7 rounded-full overflow-hidden border border-gray-200 shrink-0">
                   <Image
                     src={col1Article.author.image}
@@ -75,10 +83,10 @@ export default function ExecutiveBriefingSection({ articles, onOpenArticle }: Ex
                     className="object-cover"
                   />
                 </div>
-                <span className="text-xs font-bold text-gray-900">
+                <span className="text-xs font-bold text-gray-900 group-hover/auth:text-red-700 group-hover/auth:underline">
                   {col1Article.author.name}
                 </span>
-              </div>
+              </Link>
             </div>
           </motion.div>
 
@@ -110,13 +118,18 @@ export default function ExecutiveBriefingSection({ articles, onOpenArticle }: Ex
                     {article.title}
                   </h3>
 
-                  {/* 1 Line Description Limit with Tighter Line Height */}
                   <p className="text-xs text-gray-600 line-clamp-1 leading-snug font-normal">
                     {article.shortdescription}
                   </p>
 
                   <div className="pt-1 flex items-center justify-between text-[11px] text-gray-500 font-mono">
-                    <span>By {article.author.name}</span>
+                    <Link
+                      href={`/author/${article.author.slug}`}
+                      onClick={(e) => e.stopPropagation()}
+                      className="hover:text-red-700 hover:underline transition-colors"
+                    >
+                      By {article.author.name}
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -158,7 +171,11 @@ export default function ExecutiveBriefingSection({ articles, onOpenArticle }: Ex
             </div>
 
             <div className="pt-2 flex items-center justify-between border-t border-gray-100">
-              <div className="flex items-center gap-2.5">
+              <Link
+                href={`/author/${col3Article.author.slug}`}
+                onClick={(e) => e.stopPropagation()}
+                className="flex items-center gap-2.5 group/auth hover:opacity-80 transition-opacity"
+              >
                 <div className="relative w-7 h-7 rounded-full overflow-hidden border border-gray-200 shrink-0">
                   <Image
                     src={col3Article.author.image}
@@ -167,15 +184,14 @@ export default function ExecutiveBriefingSection({ articles, onOpenArticle }: Ex
                     className="object-cover"
                   />
                 </div>
-                <span className="text-xs font-bold text-gray-900">
+                <span className="text-xs font-bold text-gray-900 group-hover/auth:text-red-700 group-hover/auth:underline">
                   {col3Article.author.name}
                 </span>
-              </div>
+              </Link>
             </div>
           </motion.div>
 
         </div>
-
       </div>
     </section>
   );

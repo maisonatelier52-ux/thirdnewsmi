@@ -4,6 +4,7 @@ import { Article } from "@/types/article";
 import { motion } from "framer-motion";
 import { Compass, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface InvestigativeReportsSectionProps {
   articles: Article[];
@@ -20,7 +21,7 @@ export default function InvestigativeReportsSection({
 
   return (
     <section className="w-full py-5 sm:py-8 border-b border-gray-200 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-6">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-6 space-y-4 sm:space-y-6">
         
         {/* Section Header */}
         <div className="pb-2 border-b border-gray-200">
@@ -70,7 +71,13 @@ export default function InvestigativeReportsSection({
 
               {/* Author & Arrow Footer */}
               <div className="pt-3 flex items-center justify-between border-t border-gray-100 text-[11px] text-gray-500 font-mono">
-                <span>By {article.author.name}</span>
+                <Link
+                  href={`/author/${article.author.slug}`}
+                  onClick={(e) => e.stopPropagation()}
+                  className="hover:text-red-700 hover:underline transition-colors font-medium"
+                >
+                  By {article.author.name}
+                </Link>
                 <ArrowRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-gray-900 group-hover:translate-x-1 transition-all shrink-0" />
               </div>
             </motion.div>

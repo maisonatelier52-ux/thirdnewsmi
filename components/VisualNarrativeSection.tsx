@@ -4,6 +4,7 @@ import { Article } from "@/types/article";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface VisualNarrativeSectionProps {
   articles: Article[];
@@ -18,7 +19,7 @@ export default function VisualNarrativeSection({ articles, onOpenArticle }: Visu
 
   return (
     <section className="w-full py-5 sm:py-8 border-b border-gray-200 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-6">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-6 space-y-4 sm:space-y-6">
         
         {/* News Section Header */}
         <div className="pb-2 border-b border-gray-200">
@@ -64,7 +65,13 @@ export default function VisualNarrativeSection({ articles, onOpenArticle }: Visu
               </p>
 
               <div className="pt-3 flex items-center justify-between border-t border-white/20 text-xs font-mono">
-                <span className="text-gray-300">By {leadArticle.author.name}</span>
+                <Link
+                  href={`/author/${leadArticle.author.slug}`}
+                  onClick={(e) => e.stopPropagation()}
+                  className="text-gray-300 hover:text-white hover:underline transition-colors"
+                >
+                  By {leadArticle.author.name}
+                </Link>
                 <span className="flex items-center gap-1.5 text-white font-bold group-hover:underline">
                   <span>Read Article</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
@@ -96,9 +103,13 @@ export default function VisualNarrativeSection({ articles, onOpenArticle }: Visu
                   <h4 className="text-xs font-serif font-bold line-clamp-2 mt-0.5 text-gray-900 group-hover:underline leading-snug">
                     {art.title}
                   </h4>
-                  <p className="text-[10px] font-mono mt-1 text-gray-500">
+                  <Link
+                    href={`/author/${art.author.slug}`}
+                    onClick={(e) => e.stopPropagation()}
+                    className="text-[10px] font-mono mt-1 text-gray-500 hover:text-red-700 hover:underline block"
+                  >
                     By {art.author.name}
-                  </p>
+                  </Link>
                 </div>
               </div>
             ))}

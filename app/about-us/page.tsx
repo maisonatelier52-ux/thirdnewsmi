@@ -26,7 +26,7 @@ export default function AboutUsPage() {
           Independence & Standards
         </h2>
         <p>
-          Our newsroom operates with total editorial autonomy. We maintain a strict separation between commercial operations and journalistic reporting to ensure uncompromised objectivity in every dispatch we publish.
+          Our newsroom operates with total editorial autonomy. We maintain a strict separation between commercial operations and journalistic reporting to ensure uncompromised objectivity in every news story we publish.
         </p>
 
         <div className="p-4 bg-gray-50 border-l-2 border-gray-900 text-xs font-mono text-gray-600 mt-6">

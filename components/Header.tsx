@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import { Search, Radio, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Search, Radio, X, Users } from "lucide-react";
 import { Article } from "@/types/article";
 
 interface HeaderProps {
@@ -21,6 +22,23 @@ export default function Header({
 }: HeaderProps) {
   const [searchVal, setSearchVal] = useState("");
   const [isSearchActive, setIsSearchActive] = useState(false);
+  const [currentDate, setCurrentDate] = useState("");
+
+  useEffect(() => {
+    const formatDate = () => {
+      const now = new Date();
+      return now.toLocaleDateString("en-US", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }).toUpperCase();
+    };
+    setCurrentDate(formatDate());
+    // Update at midnight
+    const timer = setInterval(() => setCurrentDate(formatDate()), 60000);
+    return () => clearInterval(timer);
+  }, []);
 
   const categories = [
     { id: "all", name: "Home" },
@@ -50,18 +68,18 @@ export default function Header({
   return (
     <header className="w-full bg-white border-b border-gray-200 sticky top-0 z-40 shadow-xs">
       {/* Top Red Editorial Ticker Banner */}
-      <div className="w-full bg-[#a61919] border-b border-gray-200 text-xs font-mono py-1 relative overflow-hidden">
+      <div className="w-full bg-[#8b1a1a] border-b border-gray-200 text-xs font-mono py-1 relative overflow-hidden">
         {/* Right Side Diagonal Angled Geometric Slashes - Touches absolute right edge of screen */}
         <div className="absolute right-0 top-0 bottom-0 flex items-center pointer-events-none z-0">
-          <div className="w-12 sm:w-20 h-full bg-[#c93232] transform -skew-x-[25deg] origin-top-left -mr-4 opacity-90" />
-          <div className="w-12 sm:w-20 h-full bg-[#e05656] transform -skew-x-[25deg] origin-top-left -mr-4 opacity-90" />
-          <div className="w-12 sm:w-20 h-full bg-[#f48a8a] transform -skew-x-[25deg] origin-top-left -mr-4 opacity-90" />
-          <div className="w-12 sm:w-20 h-full bg-[#fce4e4] transform -skew-x-[25deg] origin-top-left opacity-90" />
+          <div className="w-12 sm:w-20 h-full bg-[#dc2626] transform -skew-x-[25deg] origin-top-left -mr-4 opacity-90" />
+          <div className="w-12 sm:w-20 h-full bg-[#ef4444] transform -skew-x-[25deg] origin-top-left -mr-4 opacity-90" />
+          <div className="w-12 sm:w-20 h-full bg-[#fca5a5] transform -skew-x-[25deg] origin-top-left -mr-4 opacity-90" />
+          <div className="w-12 sm:w-20 h-full bg-[#fee2e2] transform -skew-x-[25deg] origin-top-left opacity-90" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative flex items-center bg-transparent text-white h-9 overflow-hidden z-10">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-6 relative flex items-center bg-transparent text-white h-9 overflow-hidden z-10">
           {/* Left Content Badge - Aligned perfectly with main page container & logo */}
-          <div className="flex items-center gap-2 pr-4 z-10 shrink-0 font-bold uppercase tracking-wider bg-[#a61919]">
+          <div className="flex items-center gap-2 pr-4 z-10 shrink-0 font-bold uppercase tracking-wider bg-[#8b1a1a]">
             <Radio className="w-3.5 h-3.5 animate-pulse text-white" />
             <span className="text-white font-bold text-[11px] tracking-wider">BREAKING NEWS</span>
           </div>
@@ -90,17 +108,25 @@ export default function Header({
       </div>
 
       {/* Main Branding & Inline Action Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-4">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-6 py-4 flex items-center justify-between gap-4">
         {/* Left Side: Brand Logo */}
         <div>
-          <a href="/" className="flex items-center gap-2.5 group">
+          <Link href="/" className="flex items-center gap-2.5 group">
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-gray-900 font-mono">
               Domain Name
             </h1>
-          </a>
-          <p className="hidden sm:block text-[11px] text-gray-500 font-mono tracking-wide mt-0.5">
-            INDEPENDENT GLOBAL JOURNALISM & EXECUTIVE BRIEFINGS
-          </p>
+          </Link>
+          <div className="hidden sm:flex items-center gap-3 mt-0.5">
+            <p className="text-[11px] text-gray-500 font-mono tracking-wide">
+              INDEPENDENT GLOBAL JOURNALISM & EXECUTIVE BRIEFINGS
+            </p>
+            {currentDate && (
+              <>
+                <span className="text-gray-300 text-[11px]">|</span>
+                <span className="text-[11px] text-gray-400 font-mono tracking-wide">{currentDate}</span>
+              </>
+            )}
+          </div>
         </div>
 
         {/* Right Side: Interactive Direct Inline Search Box */}
@@ -176,8 +202,8 @@ export default function Header({
 
       {/* Navigation Category Bar */}
       <div className="w-full border-t border-gray-200 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="flex items-center gap-5 overflow-x-auto py-2.5 no-scrollbar scroll-smooth">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-6 flex items-center justify-between">
+          <nav className="flex items-center gap-5 overflow-x-auto py-2.5 no-scrollbar scroll-smooth flex-1">
             {categories.map((cat, idx) => {
               const isActive = selectedCategory === cat.id;
               return (
@@ -198,6 +224,15 @@ export default function Header({
               );
             })}
           </nav>
+
+          <div className="hidden md:flex items-center pl-4 border-l border-gray-200 my-1">
+            <Link
+              href="/team"
+              className="flex items-center gap-1.5 px-3 py-1 text-xs font-mono font-bold text-gray-700 hover:text-red-700 hover:underline hover:decoration-1 transition-colors whitespace-nowrap"
+            >
+              <Users className="w-3.5 h-3.5 text-red-700" /> Our Team
+            </Link>
+          </div>
         </div>
       </div>
     </header>

@@ -1,4 +1,4 @@
-import { Article } from "@/types/article";
+import { Article, Author } from "@/types/article";
 
 import businessArticles from "@/data/categories/business/articles.json";
 import technologyArticles from "@/data/categories/technology/articles.json";
@@ -61,3 +61,29 @@ export function getArticleBySlug(slug: string): Article | undefined {
   const all = getAllArticles();
   return all.find((item) => item.slug.toLowerCase() === slug.toLowerCase());
 }
+
+export function getAllAuthors(): Author[] {
+  const articles = getAllArticles();
+  const map = new Map<string, Author>();
+  for (const article of articles) {
+    if (article.author && article.author.slug) {
+      if (!map.has(article.author.slug.toLowerCase())) {
+        map.set(article.author.slug.toLowerCase(), article.author);
+      }
+    }
+  }
+  return Array.from(map.values());
+}
+
+export function getAuthorBySlug(slug: string): Author | undefined {
+  const authors = getAllAuthors();
+  return authors.find((author) => author.slug.toLowerCase() === slug.toLowerCase());
+}
+
+export function getArticlesByAuthor(slug: string): Article[] {
+  const articles = getAllArticles();
+  return articles.filter(
+    (article) => article.author && article.author.slug.toLowerCase() === slug.toLowerCase()
+  );
+}
+

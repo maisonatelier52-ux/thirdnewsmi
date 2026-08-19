@@ -4,6 +4,7 @@ import { Article } from "@/types/article";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Clock } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface CategoryHeroSectionProps {
   categoryName: string;
@@ -23,55 +24,35 @@ export default function CategoryHeroSection({
 
   return (
     <section className="w-full py-8 md:py-12 bg-white text-gray-900 border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-6 space-y-8">
         
-        {/* EDITORIAL MASTHEAD CATEGORY HEADER */}
-        <div className="space-y-4 pb-6 border-b border-gray-200">
-          <div className="flex items-center gap-2 text-[11px] font-mono text-gray-500 font-bold uppercase tracking-widest">
-            <span>EDITORIAL DESK // {categoryName.toUpperCase()}</span>
+        {/* Category Banner Title Header */}
+        <div className="border-b border-gray-900 pb-3 flex items-center justify-between">
+          <div>
+            <span className="text-xs font-mono font-bold uppercase tracking-widest text-red-700">
+              DESK DOSSIER
+            </span>
+            <h1 className="text-3xl sm:text-5xl font-black font-serif text-gray-900 capitalize tracking-tight mt-1">
+              {categoryName} Journalism
+            </h1>
           </div>
-
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-            <div className="space-y-1">
-              <h1 className="text-4xl sm:text-6xl font-serif font-bold text-gray-900 capitalize tracking-tight leading-none">
-                {categoryName}
-              </h1>
-              <p className="text-xs sm:text-sm text-gray-600 font-sans leading-relaxed pt-1">
-                Authoritative field reports, executive briefings, and investigative reporting on {categoryName}.
-              </p>
-            </div>
-
-            {/* Topic Filter Tags */}
-            <div className="flex flex-wrap items-center gap-2 text-[11px] font-sans shrink-0">
-              <span className="bg-gray-900 text-white font-semibold px-3 py-1 text-[11px] uppercase tracking-wider cursor-pointer">
-                All News
-              </span>
-              <span className="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium px-3 py-1 text-[11px] uppercase tracking-wider cursor-pointer transition-colors">
-                Markets & Capital
-              </span>
-              <span className="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium px-3 py-1 text-[11px] uppercase tracking-wider cursor-pointer transition-colors">
-                Global Economy
-              </span>
-              <span className="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium px-3 py-1 text-[11px] uppercase tracking-wider cursor-pointer transition-colors">
-                Policy & Trade
-              </span>
-            </div>
+          <div className="hidden sm:block text-right text-xs font-mono text-gray-500">
+            <span>TOTAL NEWS ({articles.length})</span>
           </div>
         </div>
 
-        {/* 12-COLUMN SHARP HERO GRID */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+        {/* 2-Column Category Hero Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
-          {/* LEFT LEAD SPOTLIGHT (7 COLS) */}
+          {/* LEFT COLUMN: Main Lead Article Spotlight (7 Cols) */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.5 }}
             onClick={() => onOpenArticle(leadArticle)}
-            className="lg:col-span-7 space-y-5 group cursor-pointer"
+            className="lg:col-span-7 group cursor-pointer space-y-4"
           >
-            {/* Crisp Sharp Image Frame (No rounded corners!) */}
-            <div className="relative w-full h-[360px] sm:h-[420px] rounded-none overflow-hidden bg-gray-100 border border-gray-100">
+            <div className="relative w-full h-[320px] sm:h-[400px] bg-gray-100 overflow-hidden shadow-2xs">
               <Image
                 src={leadArticle.image}
                 alt={leadArticle.title}
@@ -81,14 +62,13 @@ export default function CategoryHeroSection({
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
               
-              <div className="absolute bottom-6 left-6 right-6 text-white space-y-2">
-                <span className="bg-white/95 text-gray-900 font-bold px-2.5 py-1 rounded-none text-[10px] uppercase tracking-wider font-sans">
-                  {leadArticle.category}
+              <div className="absolute bottom-5 left-5 right-5 text-white flex items-center justify-between text-xs font-mono">
+                <span className="flex items-center gap-1.5 font-bold uppercase tracking-wider bg-red-700 px-2.5 py-1 rounded-sm">
+                  LEAD REPORT
                 </span>
-                <p className="text-xs text-gray-200 font-sans flex items-center gap-2">
-                  <Clock className="w-3.5 h-3.5" />
-                  {leadArticle.readTime || "4 MIN READ"} • {leadArticle.date}
-                </p>
+                <span className="flex items-center gap-1.5 text-gray-200">
+                  <Clock className="w-3.5 h-3.5" /> 4 MIN READ • {leadArticle.date}
+                </span>
               </div>
             </div>
 
@@ -102,7 +82,13 @@ export default function CategoryHeroSection({
               </p>
 
               <div className="pt-2 flex items-center justify-between text-xs text-gray-500 font-sans border-t border-gray-100">
-                <span className="font-semibold text-gray-900">By {leadArticle.author.name}</span>
+                <Link
+                  href={`/author/${leadArticle.author.slug}`}
+                  onClick={(e) => e.stopPropagation()}
+                  className="font-semibold text-gray-900 hover:text-red-700 hover:underline transition-colors"
+                >
+                  By {leadArticle.author.name}
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -140,7 +126,13 @@ export default function CategoryHeroSection({
                   </p>
 
                   <div className="pt-1 flex items-center justify-between text-[11px] text-gray-400 font-sans">
-                    <span>By {art.author.name}</span>
+                    <Link
+                      href={`/author/${art.author.slug}`}
+                      onClick={(e) => e.stopPropagation()}
+                      className="hover:text-red-700 hover:underline transition-colors font-medium text-gray-700"
+                    >
+                      By {art.author.name}
+                    </Link>
                     <ArrowUpRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-gray-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                   </div>
                 </div>
@@ -149,7 +141,6 @@ export default function CategoryHeroSection({
           </motion.div>
 
         </div>
-
       </div>
     </section>
   );

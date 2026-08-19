@@ -48,7 +48,7 @@ export default function ArticleDetailPage({ params }: ArticleDetailPageProps) {
       />
 
       <main className="flex-1">
-        <article className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8 space-y-6 sm:space-y-8">
+        <article className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-6 py-4 sm:py-8 space-y-6 sm:space-y-8">
           
           {/* Breadcrumbs Bar */}
           <div className="pb-3 border-b border-gray-200 text-[11px] font-mono uppercase tracking-widest text-gray-500">

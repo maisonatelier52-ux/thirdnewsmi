@@ -50,7 +50,7 @@ export default function PolicyLayout({
         onOpenArticle={(art) => router.push(`/${art.category.toLowerCase()}/${art.slug}`)}
       />
 
-      <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <main className="flex-1 max-w-[1400px] mx-auto w-full px-4 sm:px-6 lg:px-6 py-8 sm:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
           {/* LEFT MAIN CONTENT COLUMN (8 COLS) */}

@@ -13,7 +13,7 @@ export default function SourceMethodologyPage() {
     >
       <div className="space-y-6">
         <p>
-          Our investigative reporting and intelligence dispatches rely on rigorous sourcing protocols designed to maintain absolute factual authority.
+          Our investigative reporting and intelligence news reports rely on rigorous sourcing protocols designed to maintain absolute factual authority.
         </p>
 
         <h2 className="text-xl sm:text-2xl font-serif font-bold text-gray-900 pt-4 border-b border-gray-100 pb-2">
